@@ -17,8 +17,6 @@ const EntityScreen = ({ route }: StackNavigationProps<MainRoutes, 'Entity'>) => 
   const [errorMessage, setErrorMessage] = useState<string>('');
   const { data, isLoading, isError } = useEntity(id);
 
-  console.log('isError: ', isError);
-
   useEffect(() => {
     setEntity(data?.entity || null);
   }, [data]);
@@ -27,7 +25,6 @@ const EntityScreen = ({ route }: StackNavigationProps<MainRoutes, 'Entity'>) => 
     if (entity?.errorMessage || isError) {
       let errorMsg = 'Error while making the request';
       if (entity?.errorMessage) errorMsg = `Imbd error: ${entity?.errorMessage}`;
-      console.log('errorMsg: ', errorMsg);
       setErrorMessage(errorMsg);
     }
   }, [entity, isError]);
