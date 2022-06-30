@@ -16,7 +16,7 @@ import { setCoreLoading } from '~store/core/coreSlice';
 import { setFavouritesStorage } from '~services/localstorage.service';
 
 const initialState: IFavouritesState = {
-  loading: false,
+  loading: true,
   favourites: {},
 };
 
@@ -71,14 +71,8 @@ export const deleteFavouriteAsync =
 export const addFavouriteAsync =
   (entity: IEntity): AppThunk =>
   async (dispatch: AppDispatch, getState: () => RootStoreInterface): Promise<void> => {
-    const entityData = {
-      id: entity.id,
-      image: entity.image,
-      title: entity.title,
-      description: entity?.description || entity?.plot,
-    };
-    const favourites = { [entity.id]: entityData, ...getState().favourites.favourites };
-
+    const favourites = { ...getState().favourites.favourites };
+    favourites[entity.id] = entity;
     dispatch(setFavourites({ favourites }));
     setFavouritesStorage(favourites);
   };

@@ -20,6 +20,7 @@ export const HomeHeader = ({ navigation, noShadow, options }: Props) => {
   const { height } = useHeaderHeight();
 
   const goToSearch = () => {
+    console.log('goToSearch');
     navigation.navigate(MAIN_ROUTES.SEARCH);
   };
 
