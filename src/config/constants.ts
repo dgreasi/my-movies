@@ -9,3 +9,4 @@ export const ENTITY_WIDTH = width;
 export const ENTITY_HEIGHT = height * 0.55;
 
 export const FULL_WIDTH = width;
+export const FULL_HEIGHT = height;

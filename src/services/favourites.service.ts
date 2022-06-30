@@ -3,5 +3,4 @@ import { getFavouritesStorage } from '~services/localstorage.service';
 
 export const getFavouritesService = async (): Promise<IEntityInState> => {
   return await getFavouritesStorage();
-  // return [entityExample, entityExample, entityExample, entityExample, entityExample, entityExample, entityExample];
 };
