@@ -15,6 +15,8 @@ All notable changes to this project will be documented in this file.
 
 ### Features
 
+- (**RN**) Add recent searches functionality.
+- (**RN**) Add Search screen.
 - (**RN**) Add Entity screen.
 - (**RN**) Add Home screen.
 - (**RN**) Add @react-native-community/netinfo.

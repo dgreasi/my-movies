@@ -11,3 +11,4 @@ export { default as HomeHeader } from './organisms/HomeHeader';
 export { default as SearchInput } from './molecules/SearchInput';
 export { default as FavouriteButton } from './molecules/FavouriteButton';
 export { default as ToastMessage } from './molecules/ToastMessage';
+export { default as CarouselSectionHeader } from './molecules/CarouselSectionHeader';
