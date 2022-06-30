@@ -5,6 +5,7 @@ export * from './atoms/SafeAreaView';
 
 export { default as ImageWithFallback } from './atoms/ImageWithFallback';
 export { default as Icon } from './atoms/Icon';
+export { default as BasicLoader } from './loaders/BasicLoader';
 export { default as SearchButton } from './molecules/SearchButton';
 export { default as HomeHeader } from './organisms/HomeHeader';
 export { default as SearchInput } from './molecules/SearchInput';

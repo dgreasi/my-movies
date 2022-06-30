@@ -15,6 +15,8 @@ All notable changes to this project will be documented in this file.
 
 ### Features
 
+- (**RN**) Add Entity screen.
+- (**RN**) Add Home screen.
 - (**RN**) Add @react-native-community/netinfo.
 - (**RN**) Add axios.
 - (**RN**) Add react-native-vector-icons.
