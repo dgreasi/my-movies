@@ -36,3 +36,12 @@ export const getSeenMoviesStorage = async (): Promise<any | null> => {
     return null;
   }
 };
+
+export const getRecentSearchesStorage = async (): Promise<string[]> => {
+  try {
+    return JSON.parse((await AsyncStorage.getItem('recentSearches')) || '[]');
+  } catch (e) {
+    console.error('Error while getting recent searches of shops');
+    return [];
+  }
+};
