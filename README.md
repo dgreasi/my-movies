@@ -10,6 +10,7 @@ A simple react native project that consists of:
    5) Favourite button with the appropriate functionality.
 3) At search screen you can search using the [imdb's API](https://imdb-api.com/api), and then click to navigate to the entity's page.
 4) Recent searches are saved locally and can be chosen by the user in the suggestion list.
+5) Hide entities from search results.
 
 ## Notes
 - Imdb api doesn't have pagination, thus no infinite scroll was implemented on the search list.
