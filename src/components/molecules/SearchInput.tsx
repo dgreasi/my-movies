@@ -44,6 +44,7 @@ const SearchInput = ({ ...props }: Props) => {
 const styles = StyleSheet.create({
   searchInput: {
     fontSize: 17,
+    color: theme.colors.primary700,
     height: '100%',
     ...Platform.select({
       ios: {
