@@ -12,7 +12,7 @@ interface Props {
 
 const SearchResults = ({ searchQuery }: Props) => {
   const { height: headerHeight } = useHeaderHeight();
-  const LIST_HEIGHT = height - 48 - headerHeight;
+  const LIST_HEIGHT = height - headerHeight;
 
   return (
     <Box flex={1}>
