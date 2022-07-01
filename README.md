@@ -11,6 +11,12 @@ A simple react native project that consists of:
 3) At search screen you can search using the imdb's API, and then click to navigate to the entity's page.
 4) Recent searches are saved locally and can be chosen by the user in the suggestion list.
 
+## Notes
+- Imdb api doesn't have pagination, thus no infinite scroll was implemented on the search list.
+- The rating of each movie is appeared on the top right as a pill when we are in a list.
+  - This is possible by saving the whole entity into favourites.
+  - In search list this is not possible, because imdb's api will not return the rating for each 'Title'.
+
 ## Environment
 ```shell
 "npm": "8.11.0", # Globally installed

@@ -1,4 +1,4 @@
-import { ISearch } from '~api/search/searchResponses';
+import { IEntity } from '~interfaces/entity.interface';
 
 export interface IFavouritesState {
   loading: boolean;
@@ -14,7 +14,7 @@ export interface SetFavouritesPayload {
 }
 
 export interface AddFavouritesPayload {
-  entity: ISearch;
+  entity: IEntity;
 }
 
 export interface DeleteFavouritesPayload {
@@ -22,5 +22,5 @@ export interface DeleteFavouritesPayload {
 }
 
 export interface IEntityInState {
-  [key: string]: ISearch;
+  [key: string]: IEntity;
 }

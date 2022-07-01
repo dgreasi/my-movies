@@ -71,13 +71,7 @@ export const deleteFavouriteAsync =
 export const addFavouriteAsync =
   (entity: IEntity): AppThunk =>
   async (dispatch: AppDispatch, getState: () => RootStoreInterface): Promise<void> => {
-    const entityData = {
-      id: entity.id,
-      image: entity.image,
-      title: entity.title,
-      description: entity?.description || entity?.plot,
-    };
-    const favourites = { [entity.id]: entityData, ...getState().favourites.favourites };
+    const favourites = { [entity.id]: entity, ...getState().favourites.favourites };
 
     dispatch(setFavourites({ favourites }));
     setFavouritesStorage(favourites);
