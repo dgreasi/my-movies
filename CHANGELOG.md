@@ -10,6 +10,7 @@ All notable changes to this project will be documented in this file.
 - (**RN**) Update reanimated lib when bug is fixed on android.
   - Issue: https://github.com/software-mansion/react-native-reanimated/issues/2906
 - (**RN**) Install @gorhom/bottom-sheet to use actions bottom sheet.
+- (**RN**) Add react-native-gesture-handler to use RectButton.
 
 ## [1.0.0]
 
