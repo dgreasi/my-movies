@@ -15,6 +15,7 @@ All notable changes to this project will be documented in this file.
 
 ### Features
 
+- (**RN**) Monitor network and show appropriate message.
 - (**RN**) Add recent searches functionality.
 - (**RN**) Add Search screen.
 - (**RN**) Add Entity screen.
