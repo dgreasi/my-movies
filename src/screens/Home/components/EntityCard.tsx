@@ -9,18 +9,26 @@ import { ISearch } from '~api/search/searchResponses';
 import { Box, ImageWithFallback, Text } from '~components';
 import { MAIN_ROUTES } from '~navigation/Main/mainTypes';
 import { IEntity } from '~interfaces/entity.interface';
+import { useDispatch } from 'react-redux';
+import { addHiddenAsync } from '~store/hidden/hiddenSlice';
 
 interface Props {
   entity: ISearch | IEntity;
   index: number;
+  inSearch?: boolean;
 }
 
-const EntityCard = ({ entity, index }: Props) => {
+const EntityCard = ({ entity, index, inSearch }: Props) => {
   const navigation = useNavigation<NativeStackNavigationProp<ParamListBase>>();
   const description = entity?.description || entity?.plot || '';
+  const dispatch = useDispatch();
 
   const onPressCard = () => {
     navigation.navigate(MAIN_ROUTES.ENTITY, { id: entity.id });
+  };
+
+  const onPressHide = () => {
+    dispatch(addHiddenAsync(entity.id));
   };
 
   return (
@@ -43,6 +51,13 @@ const EntityCard = ({ entity, index }: Props) => {
           <Box style={styles.rating}>
             <Text variant="caption2">{entity?.imDbRating}</Text>
           </Box>
+        )}
+        {inSearch && (
+          <TouchableOpacity onPress={onPressHide} activeOpacity={0.5} style={styles.hideContainer}>
+            <Text color="error400" variant="caption2">
+              Hide
+            </Text>
+          </TouchableOpacity>
         )}
       </Animated.View>
     </TouchableOpacity>
@@ -76,6 +91,17 @@ const styles = StyleSheet.create({
     padding: theme.spacing.xs,
     borderRadius: theme.borderRadii.l,
     backgroundColor: theme.colors.background,
+  },
+  hideContainer: {
+    backgroundColor: theme.colors.white,
+    padding: theme.spacing.xs,
+    position: 'absolute',
+    right: '40%',
+    bottom: -8,
+    justifyContent: 'center',
+    alignItems: 'center',
+    zindex: 100,
+    elevation: 1,
   },
 });
 
