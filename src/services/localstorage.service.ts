@@ -1,5 +1,6 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { IEntityInState } from '~store/favourites/favouritesSlice.interface';
+import { IHiddenInState } from '~store/hidden/hiddenSlice.interface';
 
 export const setFavouritesStorage = async (favourites: IEntityInState): Promise<void> => {
   try {
@@ -19,21 +20,21 @@ export const getFavouritesStorage = async (): Promise<IEntityInState> => {
   }
 };
 
-export const setSeenMoviesStorage = async (movies: any): Promise<void> => {
+export const setHiddenMoviesStorage = async (ids: IHiddenInState): Promise<void> => {
   try {
-    await AsyncStorage.setItem('seenMovies', JSON.stringify(movies));
+    await AsyncStorage.setItem('hiddenMovies', JSON.stringify(ids));
   } catch (e) {
-    console.error('Error while saving seen movies');
+    console.error('Error while saving hidden movies');
   }
 };
 
-export const getSeenMoviesStorage = async (): Promise<any | null> => {
+export const getHiddenMoviesStorage = async (): Promise<IHiddenInState> => {
   try {
-    const movies = await AsyncStorage.getItem('seenMovies');
-    return movies !== null ? JSON.parse(movies) : null;
+    const movies = await AsyncStorage.getItem('hiddenMovies');
+    return movies !== null ? JSON.parse(movies) : {};
   } catch (e) {
-    console.error('Error while getting seen movies');
-    return null;
+    console.error('Error while getting hidden movies');
+    return {};
   }
 };
 

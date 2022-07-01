@@ -5,10 +5,12 @@ import React from 'react';
 import { Provider as RNProvider } from 'react-redux';
 import { ICoreState } from '~store/core/coreSlice.interface';
 import { IFavouritesState } from '~store/favourites/favouritesSlice.interface';
+import { IHiddenState } from '~store/hidden/hiddenSlice.interface';
 
 export interface RootStoreInterface {
   core: ICoreState;
   favourites: IFavouritesState;
+  hidden: IHiddenState;
 }
 
 let store: EnhancedStore<any, any, any>;
