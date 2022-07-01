@@ -9,12 +9,16 @@ import SearchPageHeader from '~screens/Search/components/SearchPageHeader';
 import SearchResults from '~screens/Search/components/SearchResults';
 import { Keyboard } from 'react-native';
 import SearchRecents from '~screens/Search/components/SearchRecents';
+import ClearHiddenButton from '~screens/Search/components/ClearHiddenButton';
+import { useSelector } from 'react-redux';
+import { selectHidden } from '~store/hidden/hiddenSlice';
 
 const SearchScreen = ({ navigation }: StackNavigationProps<MainRoutes, 'Search'>) => {
   const ready = useMount(navigation);
   const [renderSection, setRenderSection] = useState<'recents' | 'results'>('recents');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [searchFocused, setSearchFocused] = useState<boolean>(false);
+  const hidden = useSelector(selectHidden);
 
   useEffect(() => {
     if (!ready) return;
@@ -40,7 +44,12 @@ const SearchScreen = ({ navigation }: StackNavigationProps<MainRoutes, 'Search'>
         {ready && (
           <>
             {renderSection === 'recents' && <SearchRecents onSubmit={onSubmit} />}
-            {renderSection === 'results' && <SearchResults searchQuery={searchQuery} />}
+            {renderSection === 'results' && (
+              <>
+                <SearchResults searchQuery={searchQuery} />
+                {Object.keys(hidden)?.length > 0 && <ClearHiddenButton />}
+              </>
+            )}
           </>
         )}
       </SafeAreaView>
