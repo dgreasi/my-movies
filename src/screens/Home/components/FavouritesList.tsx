@@ -5,17 +5,17 @@ import { FlatList, StyleSheet } from 'react-native';
 import { Box, Text } from '~components';
 import EntityCard from '~screens/Home/components/EntityCard';
 import { selectFavourites } from '~store/favourites/favouritesSlice';
-import { ISearch } from '~api/search/searchResponses';
 import { FULL_HEIGHT } from '~config/constants';
+import { IEntity } from '~interfaces/entity.interface';
 
 interface IRender {
-  item: ISearch;
+  item: IEntity;
   index: number;
 }
 
 const FavouritesList = () => {
   const favourites = useSelector(selectFavourites);
-  const [favouritesArray, setFavouritesArray] = useState<ISearch[]>([]);
+  const [favouritesArray, setFavouritesArray] = useState<IEntity[]>([]);
 
   useEffect(() => {
     const favArray = Object.values(favourites);
@@ -24,7 +24,7 @@ const FavouritesList = () => {
 
   const Separator = () => useMemo(() => <Box style={styles.separator} />, []);
 
-  const keyExtractor = useCallback((item: ISearch, index: number) => item.id.concat(String(index)), []);
+  const keyExtractor = useCallback((item: IEntity) => item.id, []);
 
   const renderFavourites = useCallback(({ item, index }: IRender) => {
     return <EntityCard entity={item} index={index} />;
