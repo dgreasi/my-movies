@@ -16,6 +16,7 @@ A simple react native project that consists of:
 - The rating of each movie is appeared on the top right as a pill when we are in a list.
   - This is possible by saving the whole entity into favourites.
   - In search list this is not possible, because imdb's api will not return the rating for each 'Title'.
+- Tested on iOS devices.
 
 ## Environment
 ```shell
