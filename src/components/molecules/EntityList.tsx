@@ -1,4 +1,4 @@
-import React, { useCallback, useMemo } from 'react';
+import React, { useCallback } from 'react';
 import { BasicLoader, Box, Text } from '~components';
 import { useSearch } from '~api/search/useSearch';
 import { FlatList, StyleSheet } from 'react-native';
@@ -6,6 +6,8 @@ import EntityCard from '~screens/Home/components/EntityCard';
 import { ISearch } from '~api/search/searchResponses';
 import theme from '~theme/theme';
 import ErrorEmpty from '~components/molecules/ErrorEmpty';
+import { useSelector } from 'react-redux';
+import { selectHidden } from '~store/hidden/hiddenSlice';
 
 interface IRender {
   item: ISearch;
@@ -17,15 +19,22 @@ interface Props {
 }
 
 const EntityList = ({ search }: Props) => {
+  const hidden = useSelector(selectHidden);
   const { data, isLoading, isError } = useSearch(search);
-
-  const Separator = () => useMemo(() => <Box style={styles.separator} />, []);
 
   const keyExtractor = useCallback((item: ISearch) => item.id, []);
 
-  const renderEntities = useCallback(({ item, index }: IRender) => {
-    return <EntityCard entity={item} index={index} />;
-  }, []);
+  const renderEntities = useCallback(
+    ({ item, index }: IRender) => {
+      if (hidden[item.id]) return null;
+      return (
+        <Box marginBottom="m">
+          <EntityCard entity={item} index={index} inSearch />
+        </Box>
+      );
+    },
+    [hidden],
+  );
 
   if (isLoading) return <BasicLoader />;
 
@@ -45,7 +54,6 @@ const EntityList = ({ search }: Props) => {
         </Box>
       }
       onEndReachedThreshold={0.5}
-      ItemSeparatorComponent={Separator}
       data={data}
       renderItem={renderEntities}
       keyExtractor={keyExtractor}
@@ -58,7 +66,7 @@ const EntityList = ({ search }: Props) => {
 const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
-    paddingBottom: theme.spacing.m + 4,
+    paddingBottom: theme.spacing.xxl + 4,
   },
   separator: {
     height: theme.spacing.m,
