@@ -8,7 +8,7 @@ A simple react native project that consists of:
    3) Description
    4) Rating & Number of votes
    5) Favourite button with the appropriate functionality.
-3) At search screen you can search using the imdb's API, and then click to navigate to the entity's page.
+3) At search screen you can search using the [imdb's API](https://imdb-api.com/api), and then click to navigate to the entity's page.
 4) Recent searches are saved locally and can be chosen by the user in the suggestion list.
 
 ## Notes
