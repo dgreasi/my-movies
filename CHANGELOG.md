@@ -4,7 +4,6 @@ All notable changes to this project will be documented in this file.
 
 ## [TODOS]
 
-- (**RN**) Integrate promise rejection of apiRQ to react-query.
 - (**RN**) Add fast-image for better loading time in lists with images.
 - (**RN**) Add favourite button in each entity card.
 - (**RN**) Update reanimated lib when bug is fixed on android.
