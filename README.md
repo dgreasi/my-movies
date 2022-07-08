@@ -14,6 +14,7 @@ A simple react native project that consists of:
 
 ## Notes
 - Imdb api doesn't have pagination, thus no infinite scroll was implemented on the search list.
+- The api allows 100 requests per day per api key. There are 2 api keys in the env file that can be used to test the project.
 - The rating of each movie is appeared on the top right as a pill when we are in a list.
   - This is possible by saving the whole entity into favourites.
   - In search list this is not possible, because imdb's api will not return the rating for each 'Title'.
