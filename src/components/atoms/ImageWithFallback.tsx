@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useMemo, useState } from 'react';
 import { Image, ImageResizeMode, ImageStyle, ImageURISource, StyleProp } from 'react-native';
 
 // eslint-disable-next-line @typescript-eslint/no-var-requires
@@ -17,11 +17,19 @@ const ImageWithFallback = ({ styles, source, resizeMode, fallbackImg, fallbackSt
   const fallback = fallbackImg || defaultPhoto;
   const [imgExists, setImgExists] = useState<boolean>(true);
 
-  useEffect(() => {
-    if (!source?.uri) {
-      setImgExists(false);
+  const getImage = useMemo(() => {
+    if (source?.uri && imgExists) {
+      return {
+        source,
+        style: styles,
+      };
     }
-  }, [source]);
+
+    return {
+      source: fallback,
+      style: fallbackStyle || styles,
+    };
+  }, [source, fallback, fallbackStyle, styles, imgExists]);
 
   const onImgError = () => {
     setImgExists(false);
@@ -30,9 +38,9 @@ const ImageWithFallback = ({ styles, source, resizeMode, fallbackImg, fallbackSt
   return (
     <Image
       testID={testID}
-      source={imgExists ? source : fallback}
+      source={getImage.source}
       onError={onImgError}
-      style={fallbackStyle && !imgExists ? fallbackStyle : styles}
+      style={getImage.style}
       resizeMode={resizeMode}
     />
   );

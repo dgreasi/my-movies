@@ -35,10 +35,10 @@ const EntityCard = ({ entity, index, inSearch }: Props) => {
     <TouchableOpacity onPress={onPressCard} activeOpacity={0.5} style={styles.touchable}>
       <Animated.View entering={FadeIn.delay(100 * index)} layout={Layout}>
         <Box style={styles.container}>
-          <ImageWithFallback source={{ uri: entity.image }} styles={styles.imageContainers} />
+          <ImageWithFallback source={{ uri: entity?.image }} styles={styles.imageContainers} />
           <Box padding="m" width="80%">
             <Text variant="oswald" numberOfLines={2}>
-              {entity.title}
+              {entity?.title}
             </Text>
             {description?.length > 0 && (
               <Text color="primary900" numberOfLines={3} paddingTop="s">
