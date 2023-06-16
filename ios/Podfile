@@ -4,6 +4,9 @@ require_relative '../node_modules/@react-native-community/cli-platform-ios/nativ
 platform :ios, '13.0'
 install! 'cocoapods', :deterministic_uuids => false
 
+production = ENV["PRODUCTION"] == "1"
+flipperkit_version = '0.169.0'
+
 target 'MyMovies' do
   config = use_native_modules!
 
@@ -13,8 +16,10 @@ target 'MyMovies' do
   use_react_native!(
     :path => config[:reactNativePath],
     # to enable hermes on iOS, change `false` to `true` and then install pods
+    :production => production,
     :hermes_enabled => flags[:hermes_enabled],
     :fabric_enabled => flags[:fabric_enabled],
+    :flipper_configuration => FlipperConfiguration.enabled(["Debug"], { 'Flipper' => flipperkit_version }),
     # An absolute path to your application root.
     :app_path => "#{Pod::Config.instance.installation_root}/.."
   )
@@ -23,13 +28,6 @@ target 'MyMovies' do
     inherit! :complete
     # Pods for testing
   end
-
-  # Enables Flipper.
-  #
-  # Note that if you have use_frameworks! enabled, Flipper will not work and
-  # you should disable the next line.
-  use_flipper!({ 'Flipper' => '0.150.0' }) # should match the version of your Flipper client app
-
 
   post_install do |installer|
     flipper_post_install(installer)
