@@ -15,6 +15,14 @@ All notable changes to this project will be documented in this file.
 
 ### Features
 
+- (**RN**) Update to react `v18.0.0`
+- (**RN**) Update to react-native `v0.69.11`, update android, iOS native project
+- (**RN**) Update to react-reanimated `v2.9.0`
+
+## [1.0.0]
+
+### Features
+
 - (**RN**) Hide entity for searches. Reset hidden entities with button.
 - (**RN**) Monitor network and show appropriate message.
 - (**RN**) Add recent searches functionality.
