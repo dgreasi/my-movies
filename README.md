@@ -25,8 +25,8 @@ A simple react native project that consists of:
 "npm": "8.11.0", # Globally installed
 "node": "^16", # Globally installed
 "yarn": "1.22.19", # Globally installed
-"react-native": "^0.68.2",
-"react": "^17.0.2",
+"react": "18.2.0",
+"react-native": "0.71.11",
 ```
 
 ## Install dependencies
@@ -39,3 +39,14 @@ npm install --global yarn # Or use npx before each yarn command
 yarn clean-start
 yarn iosmini # Will run application to latest iPhone mini simulator
 ```
+
+## App functionality
+
+### Home screen
+![Home screen](screenshots/1.png)
+### Search screen
+![Search screen](screenshots/2.png)
+### Results
+![Results](screenshots/3.png)
+### Movie details screen
+![Movie details screen](screenshots/4.png)

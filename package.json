@@ -1,6 +1,6 @@
 {
   "name": "my-movies",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "private": true,
   "scripts": {
     "start": "react-native start",
@@ -36,11 +36,11 @@
     "@react-navigation/native-stack": "^6.6.2",
     "@reduxjs/toolkit": "^1.8.2",
     "@shopify/restyle": "^2.1.0",
-    "axios": "^0.27.2",
+    "axios": "^1.4.0",
     "lodash.debounce": "^4.0.8",
     "react": "18.2.0",
     "react-native": "0.71.11",
-    "react-native-config": "^1.4.6",
+    "react-native-config": "^1.5.1",
     "react-native-device-info": "^9.0.2",
     "react-native-flash-message": "^0.2.1",
     "react-native-reanimated": "^3.3.0",

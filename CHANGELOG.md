@@ -11,7 +11,17 @@ All notable changes to this project will be documented in this file.
 - (**RN**) Install @gorhom/bottom-sheet to use actions bottom sheet.
 - (**RN**) Add react-native-gesture-handler to use RectButton.
 
-## [1.0.0]
+## [1.0.2]
+
+### Features
+
+- (**RN**) Update react to `v18.2.0`.
+- (**RN**) Update react-native to `v0.71.11`, update native setups for iOS, Android.
+- (**RN**) Update react-native-reanimated to `v3.3.0`.
+- (**RN**) Update react-native-safe-area-context to `v4.5.3`.
+- (**RN**) Update react-native-screens to `v3.21.0`.
+
+## [1.0.1]
 
 ### Features
 
