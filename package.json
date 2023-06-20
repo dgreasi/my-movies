@@ -10,7 +10,7 @@
     "clean-android": "cd android && ./gradlew clean",
     "sim": "open -a simulator",
     "clean-pods": "cd ios && pod deintegrate",
-    "clean-ios": "xcodebuild clean build",
+    "clean-ios": "cd ios && xcodebuild clean build",
     "pod-install": "yarn clean-pods && cd ios && pod install",
     "clean-install": "rm -rf ./node_modules && yarn cache clean --force && yarn install && yarn pod-install",
     "clean-start": "watchman watch-del-all && rm -rf ./node_modules && yarn cache clean --force && yarn install && yarn clean-android && yarn pod-install && yarn start -- --reset-cache",
