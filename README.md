@@ -26,7 +26,7 @@ A simple react native project that consists of:
 "node": "^16", # Globally installed
 "yarn": "1.22.19", # Globally installed
 "react": "18.2.0",
-"react-native": "0.71.11",
+"react-native": "0.72.3",
 ```
 
 ## Install dependencies
@@ -37,7 +37,8 @@ npm install --global yarn # Or use npx before each yarn command
 
 # Install dependencies, start metro bundler and build app
 yarn clean-start
-yarn iosmini # Will run application to latest iPhone mini simulator
+# click `i` to run iOS or run the following command
+yarn ios # Will run application to latest iPhone mini simulator
 ```
 
 ## App functionality
