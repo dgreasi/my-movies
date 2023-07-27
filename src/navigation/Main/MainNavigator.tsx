@@ -1,10 +1,10 @@
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React from 'react';
-import { MAIN_ROUTES } from '~navigation/Main/mainTypes';
+import { MAIN_ROUTES, MainRoutes } from '~navigation/Main/mainTypes';
 import { EntityScreen, HomeScreen, SearchScreen } from '~screens';
 import { HomeHeader } from '~components';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<MainRoutes>();
 
 export const MainNavigator = () => {
   return (
