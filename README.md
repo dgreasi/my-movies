@@ -26,8 +26,27 @@ A simple react native project that consists of:
 "npm": "8.11.0", # Globally installed
 "node": "^16", # Globally installed
 "yarn": "1.22.19", # Globally installed
+"@react-native-async-storage/async-storage": "^1.17.7",
+"@react-native-community/netinfo": "^9.3.0",
+"@react-navigation/elements": "^1.3.3",
+"@react-navigation/native": "^6.0.10",
+"@react-navigation/native-stack": "^6.6.2",
+"@reduxjs/toolkit": "^1.8.2",
+"@shopify/restyle": "^2.1.0",
+"axios": "^1.4.0",
+"lodash.debounce": "^4.0.8",
 "react": "18.2.0",
 "react-native": "0.72.3",
+"react-native-config": "^1.5.1",
+"react-native-device-info": "^9.0.2",
+"react-native-flash-message": "^0.2.1",
+"react-native-reanimated": "^3.3.0",
+"react-native-safe-area-context": "^4.5.3",
+"react-native-screens": "^3.21.0",
+"react-native-vector-icons": "^9.2.0",
+"react-query": "^3.39.1",
+"react-redux": "^7.2.8",
+"redux-flipper": "^2.0.1"
 ```
 
 ## Install dependencies
